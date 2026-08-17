@@ -5,21 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pasteleria El Encanto - García, NL</title>
   <style>
-    body { font-family: Arial; background: #111; color: green; margin:0; padding:20px; }
-    h1 { color: #00e5ff; }
+    body { font-family: Arial; background: #111; color: white; margin:0; padding:20px; }
+    h1 { color: #ff6bb5; } /* Rosa pastel para pastelería */
   </style>
 </head>
 <body>
-  <h1>Pasteleria El Encanto</h1>
-  <div style="background:#222; padding:20px; border-radius:10px; max-width:300px;">
-  <h3>pastel de fresa</h3>
-  <p style="color:#aaa;">blanco con fresas arribas </p>
-  <p style="color:#00e5ff; font-size:20px; font-weight:bold;">$250 MXN</p>
-  <button onclick="agregar()" style="background:#00e5ff; border:none; padding:10px; width:100%; border-radius:5px; cursor:pointer; font-weight:bold;">Agregar al carrito</button>
-</div>
+  <header style="display:flex; justify-content:space-between; align-items:center;">
+    <div>
+      <h1 style="margin:0;">Pasteleria El Encanto</h1>
+      <p style="margin:0; color:#aaa;">García, NL</p>
+    </div>
+    <div style="background:white; color:black; padding:8px 15px; border-radius:20px; font-weight:bold;">
+      🛒 Carrito (<span id="contador">0</span>)
+    </div>
+  </header>
+
+  <div style="margin-top:30px; background:#222; padding:20px; border-radius:10px; max-width:300px;">
+    <h3>Pastel de Fresa</h3>
+    <p style="color:#aaa;">Blanco con fresas arriba</p>
+    <p style="color:#ff6bb5; font-size:20px; font-weight:bold;">$250 MXN</p>
+    <button onclick="agregar()" style="background:#ff6bb5; border:none; padding:10px; width:100%; border-radius:5px; cursor:pointer; font-weight:bold; color:white;">Agregar al carrito</button>
+  </div>
 
   <script>
-    console.log("Mi pasteleria");
+    let carrito = 0;
+
+    function agregar() {
+      carrito = carrito + 1;
+      document.getElementById("contador").innerText = carrito;
+      alert("¡Agregaste un pastel de fresa! Llevas " + carrito);
+    }
   </script>
 </body>
 </html>
